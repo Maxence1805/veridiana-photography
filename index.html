@@ -3,239 +3,223 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Veridiana Photography - Accueil</title>
+  <title>Veridiana Photography</title>
   <style>
     body {
       margin: 0;
       font-family: 'Georgia', serif;
       background-color: #f8f1ea;
       color: #5a4e3c;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 1rem;
     }
-
     header {
       background-color: #e9ddd3;
       text-align: center;
       padding: 2rem 1rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
     }
-
+    h1 {
+      margin: 0;
+      color: #5a4e3c;
+    }
     nav {
-      background-color: #d8c3b8;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem 0;
-      position: relative;
+      text-align: center;
+      margin-bottom: 2rem;
     }
-
     nav a {
       text-decoration: none;
       color: #5a4e3c;
       font-weight: bold;
+      margin: 0 1rem;
       padding: 0.5rem 1rem;
-    }
-
-    nav a:hover {
-      color: #7a6e5b;
-    }
-
-    /* Conteneur du menu déroulant */
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    /* Bouton principal */
-    .dropbtn {
-      cursor: pointer;
-      user-select: none;
-    }
-
-    /* Contenu caché par défaut */
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f1e6de;
-      min-width: 180px;
-      box-shadow: 0 2px 8px rgba(90, 78, 60, 0.3);
-      border-radius: 6px;
-      z-index: 1000;
-      top: 100%;
-      left: 0;
-    }
-
-    /* Style des liens dans le menu déroulant */
-    .dropdown-content a {
-      color: #5a4e3c;
-      padding: 10px 16px;
-      text-decoration: none;
-      display: block;
-      border-bottom: 1px solid #d8c3b8;
-    }
-
-    .dropdown-content a:last-child {
-      border-bottom: none;
-    }
-
-    /* Changement de couleur au survol dans le menu déroulant */
-    .dropdown-content a:hover {
       background-color: #d8c3b8;
-      color: #3e3427;
+      border-radius: 6px;
+      transition: background-color 0.3s;
     }
-
-    /* Afficher le menu au survol */
-    .dropdown:hover .dropdown-content {
-      display: block;
+    nav a:hover {
+      background-color: #7a6e5b;
+      color: #f8f1ea;
     }
-
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem 1rem;
-    }
-
-    h1, h2 {
-      text-align: center;
-      color: #5a4e3c;
-    }
-
-    section.prestations {
-      margin-top: 3rem;
-    }
-
-    .prestation {
+    section {
+      margin-bottom: 2rem;
       background-color: #f1e6de;
+      padding: 1.5rem 2rem;
       border-radius: 10px;
-      padding: 1rem 1.5rem;
-      margin-bottom: 2.5rem;
       box-shadow: 0 2px 8px rgba(90, 78, 60, 0.15);
     }
-
-    .prestation h3 {
+    h2 {
+      color: #5a4e3c;
       margin-top: 0;
-      margin-bottom: 0.5rem;
-      color: #7a6e5b;
-    }
-
-    .prestation h3 a {
-      color: #7a6e5b;
-      text-decoration: none;
-    }
-
-    .prestation h3 a:hover {
-      text-decoration: underline;
-    }
-
-    .prestation p {
-      margin: 0 0 1rem 0;
-      line-height: 1.4;
-    }
-
-    .photo-prestation {
-      margin-top: 0.5rem;
-      max-width: 300px;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(90, 78, 60, 0.3);
-    }
-
-    .photo-prestation img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    footer {
+      margin-bottom: 1rem;
       text-align: center;
-      padding: 2rem;
-      background-color: #e9ddd3;
-      margin-top: 4rem;
-      font-size: 0.9rem;
-      color: #7a6e5b;
+    }
+    /* Prestations avec photos */
+    .prestation-item {
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .prestation-item img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 0.5rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 6px rgba(90, 78, 60, 0.2);
+    }
+    /* Slider témoignages */
+    #temoignages-slider {
+      background:#f1e6de; 
+      padding:2rem 1rem; 
+      border-radius:10px; 
+      max-width:900px; 
+      margin: 3rem auto;
+    }
+    #temoignages-slider h2 {
+      text-align:center; 
+      color:#5a4e3c; 
+      margin-bottom:1.5rem;
+    }
+    #temoignages-wrapper {
+      display:flex; 
+      transition: transform 0.5s ease;
+    }
+    #temoignages-wrapper blockquote {
+      min-width:100%; 
+      padding: 1rem; 
+      font-style: italic; 
+      color:#7a6e5b;
+      margin: 0;
+    }
+    #temoignages-slider > div[style*="overflow:hidden"] {
+      position:relative; 
+      overflow:hidden; 
+      height:150px;
+    }
+    #temoignages-slider button {
+      background:#d8c3b8; 
+      border:none; 
+      padding:0.5rem 1rem; 
+      margin: 0 10px; 
+      cursor:pointer; 
+      border-radius:5px;
+      font-weight: bold;
+      color: #5a4e3c;
+      transition: background-color 0.3s;
+    }
+    #temoignages-slider button:hover {
+      background-color: #7a6e5b;
+      color: #f8f1ea;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Bienvenue chez Veridiana Photography</h1>
-    <p>Capturer les moments précieux de votre vie avec passion et douceur</p>
-  </header>
 
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="portfolio.html">Portfolio</a>
+<header>
+  <h1>Bienvenue chez Veridiana Photography</h1>
+  <p style="text-align:center; max-width:600px; margin: 0.5rem auto; font-style: italic;">
+    Capturer les moments précieux de votre vie avec douceur et authenticité.
+  </p>
+</header>
 
-    <div class="dropdown">
-      <a href="prestations.html" class="dropbtn">Prestations ▼</a>
-      <div class="dropdown-content">
-        <a href="prestations.html#famille">Séance Famille</a>
-        <a href="prestations.html#grossesse">Séance Grossesse</a>
-        <a href="prestations.html#naissance">Séance Naissance</a>
-        <a href="prestations.html#mariage">Mariage</a>
-        <a href="prestations.html#bapteme">Baptême / Événement</a>
-        <a href="prestations.html#entreprise">Shooting entreprise</a>
-      </div>
+<nav>
+  <a href="#prestations">Prestations</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="prestations">
+  <h2>Mes Prestations</h2>
+
+  <div class="prestation-item">
+    <h3><a href="prestations.html#famille">Photos de famille</a></h3>
+    <img src="https://via.placeholder.com/600x400?text=Photo+Famille" alt="Photo famille exemple" />
+  </div>
+
+  <div class="prestation-item">
+    <h3><a href="prestations.html#grossesse">Grossesse</a></h3>
+    <img src="https://via.placeholder.com/600x400?text=Photo+Grossesse" alt="Photo grossesse exemple" />
+  </div>
+
+  <div class="prestation-item">
+    <h3><a href="prestations.html#naissance">Naissance</a></h3>
+    <img src="https://via.placeholder.com/600x400?text=Photo+Naissance" alt="Photo naissance exemple" />
+  </div>
+
+  <div class="prestation-item">
+    <h3><a href="prestations.html#evenement">Événement</a></h3>
+    <img src="https://via.placeholder.com/600x400?text=Photo+Événement" alt="Photo événement exemple" />
+  </div>
+
+  <div class="prestation-item">
+    <h3><a href="prestations.html#mariage">Mariage</a></h3>
+    <img src="https://via.placeholder.com/600x400?text=Photo+Mariage" alt="Photo mariage exemple" />
+  </div>
+
+  <div class="prestation-item">
+    <h3><a href="prestations.html#bapteme">Baptême</a></h3>
+    <img src="https://via.placeholder.com/600x400?text=Photo+Baptême" alt="Photo baptême exemple" />
+  </div>
+
+  <div class="prestation-item">
+    <h3><a href="prestations.html#entreprise">Shooting entreprise</a></h3>
+    <img src="https://via.placeholder.com/600x400?text=Photo+Entreprise" alt="Photo entreprise exemple" />
+  </div>
+</section>
+
+<section id="portfolio">
+  <h2>Portfolio</h2>
+  <p style="text-align:center; color:#7a6e5b;">Ici, je mettrai mes plus belles photos.</p>
+</section>
+
+<section id="contact">
+  <h2>Contact & Devis</h2>
+  <p style="text-align:center; color:#7a6e5b;">Vous pouvez me contacter via la page dédiée.</p>
+  <p style="text-align:center;">
+    <a href="contact.html" style="color:#5a4e3c; font-weight:bold; text-decoration:none; background:#d8c3b8; padding:0.5rem 1rem; border-radius:6px;">Envoyer un message</a>
+  </p>
+</section>
+
+<!-- Slider témoignages -->
+<section id="temoignages-slider">
+  <h2>Ce que mes clients disent</h2>
+  <div style="overflow:hidden; height:150px;">
+    <div id="temoignages-wrapper">
+      <blockquote>"Veridiana a su capturer la magie de notre mariage avec une délicatesse incroyable. Nous sommes ravis !" — Sophie L.</blockquote>
+      <blockquote>"Une séance grossesse tout en douceur, des photos qui racontent une histoire." — Claire T.</blockquote>
+      <blockquote>"Très professionnelle, elle a su mettre notre bébé à l’aise pour des clichés magnifiques." — Emilie R.</blockquote>
+      <blockquote>"Une approche humaine et artistique qui rend chaque photo unique." — Antoine V.</blockquote>
     </div>
+  </div>
+  <div style="text-align:center; margin-top:1rem;">
+    <button id="prevBtn">← Précédent</button>
+    <button id="nextBtn">Suivant →</button>
+  </div>
+</section>
 
-    <a href="temoignages.html">Témoignages</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<script>
+  const wrapper = document.getElementById('temoignages-wrapper');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const total = wrapper.children.length;
+  let index = 0;
 
-  <main>
-    <section class="prestations">
-      <h2>Mes Prestations</h2>
+  function showSlide(i) {
+    if(i < 0) i = total - 1;
+    if(i >= total) i = 0;
+    wrapper.style.transform = 'translateX(' + (-i * 100) + '%)';
+    index = i;
+  }
 
-      <div class="prestation">
-        <h3><a href="prestations.html#famille">Séance Famille</a></h3>
-        <p>Immortalisez vos moments en famille avec des photos naturelles et chaleureuses.</p>
-        <div class="photo-prestation">
-          <img src="photos/famille-placeholder.jpg" alt="Séance Famille" />
-        </div>
-      </div>
+  prevBtn.addEventListener('click', () => showSlide(index - 1));
+  nextBtn.addEventListener('click', () => showSlide(index + 1));
 
-      <div class="prestation">
-        <h3><a href="prestations.html#grossesse">Séance Grossesse</a></h3>
-        <p>Célébrez la magie de la grossesse avec des clichés tendres et lumineux.</p>
-        <div class="photo-prestation">
-          <img src="photos/grossesse-placeholder.jpg" alt="Séance Grossesse" />
-        </div>
-      </div>
+  setInterval(() => {
+    showSlide(index + 1);
+  }, 5000);
+</script>
 
-      <div class="prestation">
-        <h3><a href="prestations.html#naissance">Séance Naissance</a></h3>
-        <p>Capturer les premiers instants de votre bébé avec douceur et délicatesse.</p>
-        <div class="photo-prestation">
-          <img src="photos/naissance-placeholder.jpg" alt="Séance Naissance" />
-        </div>
-      </div>
-
-      <div class="prestation">
-        <h3><a href="prestations.html#mariage">Mariage</a></h3>
-        <p>Des souvenirs inoubliables de votre grand jour, avec discrétion et créativité.</p>
-        <div class="photo-prestation">
-          <img src="photos/mariage-placeholder.jpg" alt="Mariage" />
-        </div>
-      </div>
-
-      <div class="prestation">
-        <h3><a href="prestations.html#bapteme">Baptême / Événement</a></h3>
-        <p>Immortalisez vos événements familiaux et célébrations avec élégance.</p>
-        <div class="photo-prestation">
-          <img src="photos/bapteme-placeholder.jpg" alt="Baptême / Événement" />
-        </div>
-      </div>
-
-      <div class="prestation">
-        <h3><a href="prestations.html#entreprise">Shooting entreprise</a></h3>
-        <p>Des portraits professionnels et créatifs pour valoriser votre image.</p>
-        <div class="photo-prestation">
-          <img src="photos/entreprise-placeholder.jpg" alt="Shooting entreprise" />
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    © 2025 Veridiana Photography – Tous droits réservés
-  </footer>
 </body>
 </html>
