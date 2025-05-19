@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Veridiana Photography</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Veridiana Photography - Accueil</title>
   <style>
     body {
       margin: 0;
@@ -16,11 +16,6 @@
       background-color: #e9ddd3;
       text-align: center;
       padding: 2rem 1rem;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
     }
 
     nav {
@@ -37,23 +32,61 @@
       font-weight: bold;
     }
 
-    .content {
-      padding: 2rem;
+    main {
       max-width: 900px;
       margin: auto;
+      padding: 2rem 1rem;
     }
 
-    .services {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+    h1, h2 {
+      text-align: center;
+      color: #5a4e3c;
     }
 
-    .service-box {
+    section.prestations {
+      margin-top: 3rem;
+    }
+
+    .prestation {
       background-color: #f1e6de;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 2px 8px rgba(90, 78, 60, 0.15);
+    }
+
+    .prestation h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: #7a6e5b;
+    }
+
+    .prestation h3 a {
+      color: #7a6e5b;
+      text-decoration: none;
+    }
+
+    .prestation h3 a:hover {
+      text-decoration: underline;
+    }
+
+    .prestation p {
+      margin: 0 0 1rem 0;
+      line-height: 1.4;
+    }
+
+    .photo-prestation {
+      margin-top: 0.5rem;
+      max-width: 300px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(90, 78, 60, 0.3);
+    }
+
+    .photo-prestation img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     footer {
@@ -61,38 +94,78 @@
       padding: 2rem;
       background-color: #e9ddd3;
       margin-top: 4rem;
+      font-size: 0.9rem;
+      color: #7a6e5b;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Veridiana Photography</h1>
-    <p>Photographe de vie & d'émotion</p>
+    <h1>Bienvenue chez Veridiana Photography</h1>
+    <p>Capturer les moments précieux de votre vie avec passion et douceur</p>
   </header>
 
   <nav>
-<a href="prestations.html#famille">Séance Famille</a>
-<a href="prestations.html#grossesse">Séance Grossesse</a>
-<a href="prestations.html#naissance">Séance Naissance</a>
-<a href="prestations.html#mariage">Mariage</a>
-<a href="prestations.html#bapteme">Baptême / Événement</a>
-<a href="prestations.html#entreprise">Shooting entreprise</a>
+    <a href="index.html">Accueil</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="prestations.html">Prestations</a>
+    <a href="temoignages.html">Témoignages</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
-  <div class="content">
-    <h2>Bienvenue !</h2>
-    <p>Je suis Veridiana Mulliez, photographe indépendante passionnée, spécialisée dans les moments de vie et les instants précieux.</p>
+  <main>
+    <section class="prestations">
+      <h2>Mes Prestations</h2>
 
-    <h3>Mes prestations :</h3>
-    <div class="services">
-      <div class="service-box">📸 Familles</div>
-      <div class="service-box">🤰 Grossesses</div>
-      <div class="service-box">👶 Naissances</div>
-      <div class="service-box">💍 Mariages & Baptêmes</div>
-      <div class="service-box">🎉 Événements</div>
-      <div class="service-box">🏢 Shooting entreprise</div>
-    </div>
-  </div>
+      <div class="prestation">
+        <h3><a href="prestations.html#famille">Séance Famille</a></h3>
+        <p>Immortalisez vos moments en famille avec des photos naturelles et chaleureuses.</p>
+        <div class="photo-prestation">
+          <img src="photos/famille-placeholder.jpg" alt="Séance Famille" />
+        </div>
+      </div>
+
+      <div class="prestation">
+        <h3><a href="prestations.html#grossesse">Séance Grossesse</a></h3>
+        <p>Célébrez la magie de la grossesse avec des clichés tendres et lumineux.</p>
+        <div class="photo-prestation">
+          <img src="photos/grossesse-placeholder.jpg" alt="Séance Grossesse" />
+        </div>
+      </div>
+
+      <div class="prestation">
+        <h3><a href="prestations.html#naissance">Séance Naissance</a></h3>
+        <p>Capturer les premiers instants de votre bébé avec douceur et délicatesse.</p>
+        <div class="photo-prestation">
+          <img src="photos/naissance-placeholder.jpg" alt="Séance Naissance" />
+        </div>
+      </div>
+
+      <div class="prestation">
+        <h3><a href="prestations.html#mariage">Mariage</a></h3>
+        <p>Des souvenirs inoubliables de votre grand jour, avec discrétion et créativité.</p>
+        <div class="photo-prestation">
+          <img src="photos/mariage-placeholder.jpg" alt="Mariage" />
+        </div>
+      </div>
+
+      <div class="prestation">
+        <h3><a href="prestations.html#bapteme">Baptême / Événement</a></h3>
+        <p>Immortalisez vos événements familiaux et célébrations avec élégance.</p>
+        <div class="photo-prestation">
+          <img src="photos/bapteme-placeholder.jpg" alt="Baptême / Événement" />
+        </div>
+      </div>
+
+      <div class="prestation">
+        <h3><a href="prestations.html#entreprise">Shooting entreprise</a></h3>
+        <p>Des portraits professionnels et créatifs pour valoriser votre image.</p>
+        <div class="photo-prestation">
+          <img src="photos/entreprise-placeholder.jpg" alt="Shooting entreprise" />
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     © 2025 Veridiana Photography – Tous droits réservés
