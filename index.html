@@ -24,12 +24,67 @@
       justify-content: center;
       gap: 2rem;
       padding: 1rem 0;
+      position: relative;
     }
 
     nav a {
       text-decoration: none;
       color: #5a4e3c;
       font-weight: bold;
+      padding: 0.5rem 1rem;
+    }
+
+    nav a:hover {
+      color: #7a6e5b;
+    }
+
+    /* Conteneur du menu déroulant */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Bouton principal */
+    .dropbtn {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* Contenu caché par défaut */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1e6de;
+      min-width: 180px;
+      box-shadow: 0 2px 8px rgba(90, 78, 60, 0.3);
+      border-radius: 6px;
+      z-index: 1000;
+      top: 100%;
+      left: 0;
+    }
+
+    /* Style des liens dans le menu déroulant */
+    .dropdown-content a {
+      color: #5a4e3c;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      border-bottom: 1px solid #d8c3b8;
+    }
+
+    .dropdown-content a:last-child {
+      border-bottom: none;
+    }
+
+    /* Changement de couleur au survol dans le menu déroulant */
+    .dropdown-content a:hover {
+      background-color: #d8c3b8;
+      color: #3e3427;
+    }
+
+    /* Afficher le menu au survol */
+    .dropdown:hover .dropdown-content {
+      display: block;
     }
 
     main {
@@ -108,7 +163,19 @@
   <nav>
     <a href="index.html">Accueil</a>
     <a href="portfolio.html">Portfolio</a>
-    <a href="prestations.html">Prestations</a>
+
+    <div class="dropdown">
+      <a href="prestations.html" class="dropbtn">Prestations ▼</a>
+      <div class="dropdown-content">
+        <a href="prestations.html#famille">Séance Famille</a>
+        <a href="prestations.html#grossesse">Séance Grossesse</a>
+        <a href="prestations.html#naissance">Séance Naissance</a>
+        <a href="prestations.html#mariage">Mariage</a>
+        <a href="prestations.html#bapteme">Baptême / Événement</a>
+        <a href="prestations.html#entreprise">Shooting entreprise</a>
+      </div>
+    </div>
+
     <a href="temoignages.html">Témoignages</a>
     <a href="contact.html">Contact</a>
   </nav>
